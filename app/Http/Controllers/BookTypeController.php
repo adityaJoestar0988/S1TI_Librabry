@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookType;
 use Illuminate\Http\Request;
 
 class BookTypeController extends Controller
@@ -11,7 +12,9 @@ class BookTypeController extends Controller
      */
     public function index()
     {
-        //
+        $bookTypes = BookType::get();
+
+        return view('book-types.index', compact('bookTypes'));
     }
 
     /**
