@@ -1,3 +1,11 @@
+
+9.txt
+
+Halaman
+1
+/
+1
+100%
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +41,13 @@
                     <td>{{ $bookType->name }}</td>
                     <td>{{ $bookType->description }}</td>
                     <td>
-                        
+                        <a href="{{ route('book-types.edit', $bookType) }}" class="btn btn-sm btn-warning">Edit</a>
+                        <form action="{{ route('book-types.destroy', $bookType) }}" method="POST" class="d-inline"
+                            onsubmit="return confirm('Yakin ingin hapus?')">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-sm btn-danger">Hapus</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
@@ -43,3 +57,4 @@
 </body>
 
 </html>
+Menampilkan 9.txt.
