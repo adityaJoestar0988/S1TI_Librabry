@@ -52,17 +52,23 @@ class BookTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(BookType $bookType)
     {
-        //
+        return view('book-types.form', compact('bookType'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, BookType $bookType)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+        ]);
+
+        $bookType->update($validated);
+        return redirect()->route('book-types.index')->with('success', 'Tipe Buku berhasil diupdate.');
     }
 
     /**

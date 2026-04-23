@@ -1,11 +1,4 @@
 
-9.txt
-
-Halaman
-1
-/
-1
-100%
 <!doctype html>
 <html lang="en">
 
@@ -57,4 +50,3 @@ Halaman
 </body>
 
 </html>
-Menampilkan 9.txt.
