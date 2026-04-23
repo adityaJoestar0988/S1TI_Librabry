@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/book-types',[BookTypeController::class, 'index']);
+
+Route::resource('book-types',BookTypeController::class);

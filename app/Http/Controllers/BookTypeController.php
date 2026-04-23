@@ -22,7 +22,7 @@ class BookTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('book-types.form');
     }
 
     /**
@@ -30,7 +30,15 @@ class BookTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validation
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+        ]);
+
+        BookType::create($validated);
+
+        return redirect()->route('book-types.index')->with('success', 'Tipe Buku berhasil ditambahkan.');
     }
 
     /**

@@ -17,7 +17,7 @@
             </div>
         @endif
 
-
+        <a href="{{ route('book-types.create') }}" class="btn btn-primary mb-3">+ Tambah Tipe Buku</a>
 
         <table class="table table-bordered">
             <thead>
@@ -33,7 +33,7 @@
                     <td>{{ $bookType->name }}</td>
                     <td>{{ $bookType->description }}</td>
                     <td>
-
+                        
                     </td>
                 </tr>
                 @endforeach
