@@ -54,6 +54,9 @@
                 </tr>
                 @endforeach
             </tbody>
+            <div class="mt-3">
+                {{ $books->links() }}
+            </div>
         </table>
     </div>
 </body>
