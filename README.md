@@ -26,7 +26,7 @@ Ikuti langkah berikut untuk menjalankan project di lokal:
 ### 🔗 Clone Repository
 
 ```bash
-[git clone https://github.com/username/repository.git](https://github.com/adityaJoestar0988/S1TI_Librabry.git)
+git clone https://github.com/adityaJoestar0988/S1TI_Librabry.git
 cd repository
 ```
 
