@@ -121,6 +121,14 @@ http://localhost:8000
 
 ---
 
+### Setelah semua selesai jalankan
+
+```bash
+php artisan storage:link
+```
+
+---
+
 ## 🛠️ Troubleshooting
 
 Permission error:
