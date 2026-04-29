@@ -55,8 +55,14 @@ cp .env.example .env
 Edit file `.env`:
 
 ```env
-APP_NAME="S1TI Library"
+APP_NAME="S1TI Librabry"
+APP_ENV=local
+APP_KEY=base64:J//+jFPy45tDEUHoXqCJ28snFwmhufxs/0gm80hQdkI=
+APP_DEBUG=true
 APP_URL=http://localhost:8000
+
+APP_LOCALE=en
+APP_FALLBACK_LOCALE=en
 APP_FAKER_LOCALE=id_ID
 
 DB_CONNECTION=mysql
