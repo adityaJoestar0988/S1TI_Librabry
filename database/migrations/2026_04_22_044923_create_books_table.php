@@ -19,7 +19,8 @@ return new class extends Migration
                 ->restrictOnDelete();
 
             $table->string('title');
-            $table->text('synopsis')->nullable();            
+            $table->text('synopsis')->nullable();
+                        
             $table->timestamps();
         });
     }
