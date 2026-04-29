@@ -36,7 +36,8 @@
                     <td>{{ $book->synopsis }}</td>
                     <td>
                         @if($book->image)
-                            <img src="{{ asset('storage/' . $book->image) }}" width="150">
+                            <!-- <img src="{{ asset('storage/' . $book->image) }}" width="150"> -->
+                            <img src="{{ asset('storage/' . $book->image) }}" alt="Gambar Buku" style="width: 100px;">
                         @else
                             <span class="text-muted">Tidak ada gambar</span>
                         @endif
