@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookTypeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,5 +18,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::get('/book-types',[BookTypeController::class, 'index']);
+
+Route::resource('book-types',BookTypeController::class);
+
+Route::resource('books', BookController::class);
+// Route::get('/books', [BookController::class, 'index']);
+
 
 require __DIR__.'/auth.php';
+
+
