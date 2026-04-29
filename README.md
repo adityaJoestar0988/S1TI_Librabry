@@ -27,7 +27,7 @@ Ikuti langkah berikut untuk menjalankan project di lokal:
 
 ```bash
 git clone https://github.com/adityaJoestar0988/S1TI_Librabry.git
-cd repository
+cd S1TI_Librabry
 ```
 
 ---
