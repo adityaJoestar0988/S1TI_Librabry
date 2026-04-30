@@ -19,4 +19,9 @@ class Book extends Model
     {
         return $this->belongsTo(BookType::class);
     }
+
+    public function transactionDetails()
+    {
+        return $this->hasMany(TransactionDetail::class);
+    }
 }
