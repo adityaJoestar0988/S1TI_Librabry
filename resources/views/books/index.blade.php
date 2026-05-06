@@ -44,12 +44,14 @@
                     </td>    
                     <td>
                         <a href="{{ route('books.edit', $book) }}" class="btn btn-sm btn-warning">Edit</a>
-                        <form action="{{ route('books.destroy', $book) }}" method="POST" class="d-inline"
-                            onsubmit="return confirm('Yakin ingin hapus?')">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-sm btn-danger">Hapus</button>
-                        </form>
+                        @if(auth()->user()->role == "admin")
+                            <form action="{{ route('books.destroy', $book) }}" method="POST" class="d-inline"
+                                onsubmit="return confirm('Yakin ingin hapus?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-sm btn-danger">Hapus</button>
+                            </form>
+                        @endif
                     </td>
                 </tr>
                 @endforeach
