@@ -43,7 +43,9 @@
                         @endif
                     </td>    
                     <td>
+                       @if(auth()->user()->role == "admin") 
                         <a href="{{ route('books.edit', $book) }}" class="btn btn-sm btn-warning">Edit</a>
+                        @endif
                        @if(auth()->user()->role == "admin")
                             <form action="{{ route('books.destroy', $book) }}"
                                 method="POST" class="d-inline"
