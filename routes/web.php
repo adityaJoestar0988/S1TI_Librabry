@@ -18,8 +18,10 @@ Route::get('/book-types',[BookTypeController::class, 'index']);
 
 Route::resource('book-types',BookTypeController::class);
 
-Route::resource('books', BookController::class);
-// Route::get('/books', [BookController::class, 'index']);
+// Route::resource('books', BookController::class);
+Route::get('/books', [BookController::class, 'index']);
+
+Route::get('/contact-us', [HomeController::class,'contact']);
 
 Route::get('/login', [AuthController::class, 'index']);
 Route::post('/login', [AuthController::class, 'login'])->name('login');

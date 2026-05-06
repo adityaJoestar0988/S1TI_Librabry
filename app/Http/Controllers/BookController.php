@@ -17,6 +17,16 @@ class BookController extends Controller
         return view('books.index', compact('books'));
     }
 
+        public function landing()
+    {
+        $books = Book::with('bookType')
+        ->latest()
+        ->take(4)
+        ->get();
+
+        return view('home.index', compact('books'));
+    }
+
     public function create()
     {
         $bookTypes = BookType::get();
