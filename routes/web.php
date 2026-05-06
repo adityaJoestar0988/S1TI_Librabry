@@ -33,3 +33,31 @@ Route::middleware('auth')->group(function () {
 });
 
 // Tambahkan baris ini untuk menampilkan halaman daftar
+//PAK ANGLING
+Route::resource('book-types', BookTypeController::class)->middleware(['auth',
+'role:admin']);
+Route::resource('books', BookController::class)->middleware(['auth', 'role:admin']);
+
+//ATUR CRUD
+ 
+
+Route::get('/books/create', [BookController::class, 'create'])->name('books.create')
+->middleware(['auth', 'role:admin']);
+
+Route::get('/books', [BookController::class, 'index'])->name('books.index')
+->middleware(['auth', 'role:user,admin']);
+
+Route::post('/books', [BookController::class, 'store'])->name('books.store')
+->middleware(['auth', 'role:admin']);
+
+Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show')
+->middleware(['auth', 'role:admin']);
+
+Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('books.edit')
+->middleware(['auth', 'role:admin']);
+
+Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update')
+->middleware(['auth', 'role:admin']);
+
+Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy')
+->middleware(['auth', 'role:admin']);
