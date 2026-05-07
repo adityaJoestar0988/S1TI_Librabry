@@ -44,6 +44,7 @@
                         >
                             Book Types
                         </a>
+                        
 
                         <form action="{{ route('logout') }}" method="POST" class="inline-block">
                             @csrf
