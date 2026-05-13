@@ -133,9 +133,8 @@
         </div>
 
         <div class="row g-4">   
-            @foreach($books as $book)
-                
-                <div class="col-md-6 col-lg-3">
+            @foreach($books as $book)             
+                <div class="col-md-6 col-lg-3" data-aos="flip-up">
                     <div class="card h-100 shadow-sm border-0">
                         <img 
                             src="{{ asset('storage/' . $book->image) }}" 

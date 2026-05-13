@@ -49,7 +49,7 @@ Route::get('/books/create', [BookController::class, 'create'])->name('books.crea
 ->middleware(['auth', 'role:admin']);
 
 Route::get('/books', [BookController::class, 'index'])->name('books.index')
-->middleware(['auth', 'role:user,admin']);
+->middleware(['auth', 'role:user']);
 
 Route::post('/books', [BookController::class, 'store'])->name('books.store')
 ->middleware(['auth', 'role:admin']);
