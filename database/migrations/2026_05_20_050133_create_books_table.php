@@ -13,14 +13,8 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('book_type_id')
-                ->constrained('book_types')
-                ->cascadeOnUpdate()
-                ->restrictOnDelete();
-
             $table->string('title');
-            $table->text('synopsis')->nullable();
-            $table->string('image')->nullable(); 
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -32,4 +26,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('books');
     }
+    
 };
