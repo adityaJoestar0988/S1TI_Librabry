@@ -12,7 +12,8 @@ class BookTypeController extends Controller
      */
     public function index()
     {
-        $bookTypes = BookType::get();
+        // $bookTypes = BookType::get();
+        $bookTypes = BookType::paginate(5);
 
         return view('book-types.index', compact('bookTypes'));
     }
