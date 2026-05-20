@@ -15,9 +15,10 @@
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}
             </div>
-        @endif        
+        @endif      
+        @if(auth()->user()->role == "admin")   
         <a href="{{ route('books.create') }}" class="btn btn-primary mb-3">+ Tambah Buku</a>
-
+        @endif
         <table class="table table-bordered">
             <thead>
                 <tr>

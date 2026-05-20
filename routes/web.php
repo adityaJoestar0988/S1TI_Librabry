@@ -48,8 +48,8 @@ Route::resource('books', BookController::class)->middleware(['auth', 'role:admin
 Route::get('/books/create', [BookController::class, 'create'])->name('books.create')
 ->middleware(['auth', 'role:admin']);
 
-Route::get('/books', [BookController::class, 'index'])->name('books.index')
-->middleware(['auth', 'role:user']);
+// Route::get('/books', [BookController::class, 'index'])->name('books.index')
+// ->middleware(['auth', 'role:user']);
 
 Route::post('/books', [BookController::class, 'store'])->name('books.store')
 ->middleware(['auth', 'role:admin']);
